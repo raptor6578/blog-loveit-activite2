@@ -1,0 +1,18 @@
+<ul class="list-group">
+  <li class="list-group-item"
+      [class.list-group-item-success]="post.loveIts > 0"
+      [class.list-group-item-danger]="post.loveIts < 0">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{post.title}}</h5>
+      <small>{{post.created_at | date:'short'}}</small>
+    </div>
+    <p class="mb-1">{{post.content}}</p>
+    <div style="margin-top: 15px" class="d-flex w-100 justify-content-between">
+      <div>
+        <button (click)="postsService.loveIt(index)" class="btn btn-sm btn-success">Love it!</button>
+        <button (click)="postsService.dontLoveIt(index)" class="btn btn-sm btn-danger" style="margin-left:5px">Don't love !!!</button>
+      </div>
+      <button (click)="postsService.deletePost(index)" class="btn btn-sm btn-danger">Supprimer post</button>
+    </div>
+  </li>
+</ul>

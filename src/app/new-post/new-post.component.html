@@ -1,0 +1,15 @@
+<h3>Nouveau post</h3>
+
+<div *ngIf="alert" class="alert" [ngClass]="alert['class']" role="alert">
+  {{alert['text']}}
+</div>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div class="form-group">
+    <label for="title">Titre</label>
+    <input type="text" name="title" id="title" class="form-control" ngModel required />
+    <label for="content">Contenu</label>
+    <textarea id="content" name="content" class="form-control" ngModel required></textarea>
+    <button type="submit" class="btn btn-sm btn-primary">Envoyer</button>
+  </div>
+</form>
